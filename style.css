@@ -19,8 +19,13 @@ h1 {
 }
 
 button {
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  color: inherit;
+  font: inherit;
 }
 
 button:hover {
@@ -137,10 +142,6 @@ section {
   display: inline-block;
 }
 
-.show-tasks ul li button {
-  /* flex-shrink: 0; */
-}
-
 .icon-checked {
   display: none;
 }
@@ -193,7 +194,6 @@ section {
 }
 
 .add-tasks form label {
-  /* align-self: self-start; */
   font-size: 1.5rem;
 }
 
@@ -202,6 +202,10 @@ section {
   padding: 0.5rem;
   border-radius: 0.3rem;
   width: 100%;
+  font-size: 16px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(34, 40, 49, 0.5);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(34, 40, 49, 0.5);
+  box-shadow: 0px 0px 5px 0px rgba(34, 40, 49, 0.5);
 }
 
 .add-tasks form input:focus {
@@ -215,9 +219,13 @@ section {
   color: #eeeeee;
   padding: 0.5rem;
   border-radius: 0.3rem;
+  -webkit-box-shadow: 0px 3px 3px 0px rgba(34, 40, 49, 0.5);
+  -moz-box-shadow: 0px 3px 3px 0px rgba(34, 40, 49, 0.5);
+  box-shadow: 0px 3px 3px 0px rgba(34, 40, 49, 0.5);
 }
 
 /* MEDIA QUERIES */
+
 /* Dark MODE */
 body.dark-mode {
   background-color: #222831;
