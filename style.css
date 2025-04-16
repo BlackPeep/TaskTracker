@@ -1,0 +1,252 @@
+/* General */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #eeeeee;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  color: #eeeeee;
+  font-size: 2rem;
+}
+
+button {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.75;
+  transform: scale(1.05);
+}
+
+/* Navbar */
+
+nav {
+  background-color: #00adb5;
+  height: 10vh;
+  padding: 0 5vw 0 43vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .darkmode-toggle {
+  background-color: #00adb5;
+  color: #222831;
+}
+
+nav .darkmode-toggle .light {
+  display: none;
+}
+
+nav.darkmode-toggle .dark {
+  display: inline;
+}
+
+@media (max-width: 900px) {
+  nav {
+    padding: 0 5vw 0 5vw;
+  }
+}
+
+/* Main Content */
+
+main {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 90vh;
+}
+
+section {
+  margin-bottom: 35vh;
+  margin-top: 5vh;
+  flex: 1;
+  min-width: 0;
+  padding: 0 10vw 0 10vw;
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  section {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .show-tasks {
+    order: 1;
+    width: 100%;
+  }
+
+  .add-tasks {
+    order: 0;
+    width: 100%;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+  }
+
+  .show-tasks ul {
+    padding-left: 0;
+  }
+}
+
+/* Show Task Section */
+
+.show-tasks ul {
+  list-style: none;
+  width: 100%;
+  max-height: 100%;
+  padding-left: 0;
+  /* overflow-y: auto; */
+}
+
+.show-tasks ul li {
+  display: flex;
+  margin: 1rem 0;
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 1.25rem;
+}
+
+.show-tasks ul li span {
+  overflow-wrap: break-word;
+  white-space: normal;
+  flex: 1;
+  max-width: 60%;
+}
+
+.show-tasks ul li div {
+  min-width: 80px;
+  display: inline-block;
+}
+
+.show-tasks ul li button {
+  /* flex-shrink: 0; */
+}
+
+.icon-checked {
+  display: none;
+}
+
+.done .icon-unchecked {
+  display: none;
+}
+
+.done .icon-checked {
+  display: inline;
+}
+
+/* Add Tasks Section */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.3s ease-in forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+.add-tasks form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.add-tasks form label {
+  /* align-self: self-start; */
+  font-size: 1.5rem;
+}
+
+.add-tasks form input {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  width: 100%;
+}
+
+.add-tasks form input:focus {
+  outline: none;
+}
+
+.add-tasks form button {
+  width: 100%;
+  border: none;
+  background-color: #00adb5;
+  color: #eeeeee;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+}
+
+/* MEDIA QUERIES */
+/* Dark MODE */
+body.dark-mode {
+  background-color: #222831;
+  color: #eeeeee;
+}
+
+body.dark-mode button {
+  background-color: #222831;
+  color: #eeeeee;
+}
+
+body.dark-mode .darkmode-toggle {
+  background-color: #00adb5;
+  color: #222831;
+}
+
+body.dark-mode .dark {
+  display: none;
+}
+
+body.dark-mode .light {
+  display: inline;
+}
+
+body.dark-mode form button {
+  background-color: #00adb5;
+}
+
+body,
+button {
+  transition: all 0.3s ease;
+}
