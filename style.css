@@ -27,20 +27,18 @@ button {
   background: none;
   color: inherit;
   font: inherit;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 button:hover {
   cursor: pointer;
   opacity: 0.75;
-  transform: scale(1.03);
+  transform: scale(1.01);
 }
 
-button:active {
-  transform: scale(0.97);
-  opacity: 0.6;
-}
-
-button:focus {
+button button:focus {
   outline: none;
 }
 
