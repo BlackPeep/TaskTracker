@@ -19,10 +19,11 @@ h1 {
 }
 
 button {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  background-color: transparent;
   border: none;
   appearance: none;
   -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
   background: none;
   color: inherit;
   font: inherit;
@@ -31,7 +32,16 @@ button {
 button:hover {
   cursor: pointer;
   opacity: 0.75;
-  transform: scale(1.05);
+  transform: scale(1.03);
+}
+
+button:active {
+  transform: scale(0.97);
+  opacity: 0.6;
+}
+
+button:focus {
+  outline: none;
 }
 
 /* Navbar */
@@ -117,7 +127,6 @@ section {
   width: 100%;
   max-height: 100%;
   padding-left: 0;
-  /* overflow-y: auto; */
 }
 
 .show-tasks ul li {
@@ -233,7 +242,6 @@ body.dark-mode {
 }
 
 body.dark-mode button {
-  background-color: #222831;
   color: #eeeeee;
 }
 
@@ -248,10 +256,6 @@ body.dark-mode .dark {
 
 body.dark-mode .light {
   display: inline;
-}
-
-body.dark-mode form button {
-  background-color: #00adb5;
 }
 
 body,
